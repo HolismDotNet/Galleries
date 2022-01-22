@@ -1,6 +1,6 @@
 using Holism.Galleries.DataAccess;
 
-namespace Holism.Galleries.DataAccess;
+namespace Holism.Galleries.Business;
 
 public class GalleryBusiness : Business<Gallery, Gallery>
 {
