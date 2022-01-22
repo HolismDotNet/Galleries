@@ -1,6 +1,4 @@
-
-
-namespace Holism.Galleries.Business;
+namespace Galleries;
 
 public class GalleryBusiness : Business<Gallery, Gallery>
 {
