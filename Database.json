@@ -1,0 +1,13 @@
+{
+    "name": "Galleries",
+    "tables": [
+        {
+            "name": "Galleries",
+            "columns": [
+                {
+                    "name": "Title"
+                }
+            ]
+        }
+    ]
+}
