@@ -1,12 +1,12 @@
-namespace Holism.Galleries.DataAccess;
+namespace Galleries;
 
 public class Repository
 {
-    public static Repository<Gallery> Gallery
+    public static Repository<Galleries.Gallery> Gallery
     {
         get
         {
-            return new Repository<Gallery>(new GalleriesContext());
+            return new Repository<Galleries.Gallery>(new GalleriesContext());
         }
     }
 }

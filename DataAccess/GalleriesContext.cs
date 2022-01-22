@@ -1,4 +1,4 @@
-namespace Holism.Galleries.DataAccess;
+namespace Galleries;
 
 public class GalleriesContext : DatabaseContext
 {

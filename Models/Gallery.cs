@@ -1,4 +1,4 @@
-namespace Holism.Galleries.Models;
+namespace Galleries;
 
 public class Gallery : IEntity
 {
