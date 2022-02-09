@@ -5,30 +5,16 @@
             "name": "Galleries",
             "hasGuid": true,
             "hasSlug": true,
+            "hasOrder": true,
             "columns": [
                 {
                     "name": "Title"
-                }
-            ]
-        },
-        {
-            "name": "Images",
-            "hasGuid": true,
-            "columns": [
-                {
-                    "name": "GalleryId"
                 },
                 {
-                    "name": "ImageGuid"
-                }
-            ],
-            "indexes": [
+                    "name": "Description"
+                },
                 {
-                    "columns": [
-                        "GalleryId",
-                        "ImageGuid"
-                    ],
-                    "isUnique": true
+                    "name": "Date"
                 }
             ]
         }
