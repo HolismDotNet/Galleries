@@ -3,9 +3,32 @@
     "tables": [
         {
             "name": "Galleries",
+            "hasGuid": true,
+            "hasSlug": true,
             "columns": [
                 {
                     "name": "Title"
+                }
+            ]
+        },
+        {
+            "name": "Images",
+            "hasGuid": true,
+            "columns": [
+                {
+                    "name": "GalleryId"
+                },
+                {
+                    "name": "ImageGuid"
+                }
+            ],
+            "indexes": [
+                {
+                    "columns": [
+                        "GalleryId",
+                        "ImageGuid"
+                    ],
+                    "isUnique": true
                 }
             ]
         }
