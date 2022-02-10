@@ -15,6 +15,8 @@ public class Gallery : IEntity, IGuid, IOrder
 
     public string Description { get; set; }
 
+    public Guid? ImageGuid { get; set; }
+
     public DateTime UtcDate { get; set; }
 
     public long Order { get; set; }
