@@ -12,6 +12,15 @@ public class GalleryBusiness : Business<Gallery, Gallery>
         base.PreCreation(model);
     }
 
+    protected override void ModifyItemBeforeReturning(Gallery item)
+    {
+        if (item.ImageGuid.HasValue)
+        {
+            item.RelatedItems.ImageUrl = Storage.GetImageUrl(ContainerName, item.ImageGuid.Value);
+        }
+        base.ModifyItemBeforeReturning(item);
+    }
+
     protected override void ModifyListBeforeReturning(List<Gallery> items)
     {
         new Media.ImageBusiness().Augment(items.Select(i => (IGuid)i).ToList());
