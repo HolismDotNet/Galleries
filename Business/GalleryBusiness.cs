@@ -2,9 +2,9 @@ namespace Galleries;
 
 public class GalleryBusiness : Business<Gallery, Gallery>
 {
-    protected override ReadRepository<Gallery> ReadRepository => Repository.Gallery;
+    protected override Read<Gallery> Read => Repository.Gallery;
 
-    protected override Repository<Gallery> WriteRepository => Repository.Gallery;
+    protected override Write<Gallery> Write => Repository.Gallery;
 
     protected override void PreCreation(Gallery model)
     {
@@ -29,7 +29,7 @@ public class GalleryBusiness : Business<Gallery, Gallery>
 
     public Gallery ChangeImage(long galleryId, byte[] bytes)
     {
-        var gallery = WriteRepository.Get(galleryId);
+        var gallery = Write.Get(galleryId);
         if (gallery.ImageGuid.HasValue)
         {
             Storage.DeleteImage(ContainerName, gallery.ImageGuid.Value);
@@ -37,7 +37,7 @@ public class GalleryBusiness : Business<Gallery, Gallery>
         var fullHdImage = ImageHelper.MakeImageThumbnail(Resolution.FullHd, null, bytes);
         gallery.ImageGuid = Guid.NewGuid();
         Storage.UploadImage(fullHdImage.GetBytes(), gallery.ImageGuid.Value, ContainerName);
-        WriteRepository.Update(gallery);
+        Write.Update(gallery);
         return Get(galleryId);
     }
 }

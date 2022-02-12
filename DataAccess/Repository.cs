@@ -2,11 +2,11 @@ namespace Galleries;
 
 public class Repository
 {
-    public static Repository<Galleries.Gallery> Gallery
+    public static Write<Galleries.Gallery> Gallery
     {
         get
         {
-            return new Repository<Galleries.Gallery>(new GalleriesContext());
+            return new Write<Galleries.Gallery>(new GalleriesContext());
         }
     }
 }
