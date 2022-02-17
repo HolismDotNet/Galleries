@@ -1,6 +1,6 @@
 namespace Galleries;
 
-public class Gallery : IEntity, IGuid, IOrder
+public class Gallery : IEntity, IGuid, ISlug, IOrder
 {
     public Gallery()
     {
@@ -20,6 +20,8 @@ public class Gallery : IEntity, IGuid, IOrder
     public DateTime UtcDate { get; set; }
 
     public long Order { get; set; }
+
+    public string Slug { get; set; }
 
     public dynamic RelatedItems { get; set; }
 }
