@@ -12,11 +12,11 @@
                 },
                 {
                     "name": "Description",
-                    "isNullable": true
+                    "nullable": true
                 },
                 {
                     "name": "ImageGuid",
-                    "isNullable": true
+                    "nullable": true
                 },
                 {
                     "name": "Date"
