@@ -26,18 +26,4 @@ public class GalleryBusiness : Business<Gallery, Gallery>
         new Media.ImageBusiness().Augment(items.Select(i => (IGuid)i).ToList());
         base.ModifyListBeforeReturning(items);
     }
-
-    public Gallery ChangeImage(long galleryId, byte[] bytes)
-    {
-        var gallery = Write.Get(galleryId);
-        if (gallery.ImageGuid.HasValue)
-        {
-            Storage.DeleteImage(ContainerName, gallery.ImageGuid.Value);
-        }
-        var fullHdImage = ImageHelper.MakeImageThumbnail(Resolution.FullHd, null, bytes);
-        gallery.ImageGuid = Guid.NewGuid();
-        Storage.UploadImage(fullHdImage.GetBytes(), gallery.ImageGuid.Value, ContainerName);
-        Write.Update(gallery);
-        return Get(galleryId);
-    }
 }
